@@ -1,0 +1,8 @@
+{
+  "name": "kagurajs-project",
+  "private": "true",
+  "dependencies": {
+    "vite": "^4.4.0",
+    "kagurajs": "^0.1.4"
+  }
+}
