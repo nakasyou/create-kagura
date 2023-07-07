@@ -1,0 +1,22 @@
+{
+  "name": "create-kagura",
+  "version": "0.1.0",
+  "type": "module",
+  "author": "nakasyou",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nakasyou/create-kagura.git"
+  },
+  "bugs": "https://github.com/nakasyou/kagurajs/issues",
+  "homepage": "https://nakasyou.github.io/KaguraJS",
+  "exports": {
+    ".": "./create.mjs"
+  },
+  "main": "./create.mjs",
+  "bin": {
+    "create-kagura": "./create.mjs"
+  },
+  "scripts": {},
+  "files": ["create.js"]
+}
