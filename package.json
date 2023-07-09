@@ -19,7 +19,8 @@
   },
   "scripts": {},
   "files": [
-    "create.mjs"
+    "create.mjs",
+    "templates"
   ],
   "dependencies": {
     "chalk": "^5.3.0",
