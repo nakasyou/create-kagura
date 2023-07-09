@@ -8,4 +8,3 @@ const app = new Kagura({
 
 kagura.setCanvasSize(1000,200)
 await app.start()
-
