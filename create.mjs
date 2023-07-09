@@ -29,7 +29,7 @@ async function main () {
 function getPkgManager() {
   const npmUa = process.env.npm_config_user_agent ? process.env.npm_config_user_agent : ""  // get npm_config_user_agent
 
-  const pkgSpec = userAgent.split(' ')[0]
+  const pkgSpec = npmUa.split(' ')[0]
   const pkgManager = pkgSpec.split('/')[0]
 
   return pkgManager ? pkgManager : 'npm'
