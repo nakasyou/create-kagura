@@ -7,7 +7,7 @@ async function main () {
   const questions = [
     {
       type: 'text',
-      name: 'projectName',
+      name: 'project name',
       message: 'Project name'
     }
   ]
