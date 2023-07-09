@@ -42,7 +42,8 @@ async function main () {
   }
 }
 function cansel () {
-  throw new Error("Canseled")
+  console.log(chalk.red('✖') + ' Operation cancelled')
+  process.exit(1)
 }
 function isEmpty(path) {
   const files = fs.readdirSync(path)
