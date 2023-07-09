@@ -17,7 +17,9 @@
   "bin": {
     "create-kagura": "./create.mjs"
   },
-  "scripts": {},
+  "scripts": {
+    "run-tool": "node create.mjs"
+  },
   "files": [
     "create.mjs",
     "templates"

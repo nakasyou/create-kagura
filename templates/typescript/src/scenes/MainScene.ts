@@ -4,8 +4,8 @@ import {
   Sprite,
   Asset,
 } from "kagurajs"
-import ViteLogo from "../../assets/vite.svg"
-import KaguraLogo from "../../assets/kagura.svg"
+import viteLogo from "../../assets/vite.svg"
+import kaguraLogo from "../../assets/kagura.svg"
 
 export default class MainScene extends Scene {
   vite: Sprite
@@ -17,15 +17,23 @@ export default class MainScene extends Scene {
   }
   async init () {
     this.vite = await new Sprite().init({
-      asset: new Asset().fromURL(ViteLogo)
+      asset: await new Asset().fromURL(viteLogo)
     })
     this.vite.x = 0
+    this.vite.y = 30
+    this.vite.children[0]!.width = 150
+    this.vite.children[0]!.height = 150
+    //this.vite.height = 100
+
     this.addChild(this.vite)
     
     this.kagura = await new Sprite().init({
-      asset: new Asset().fromURL(KaguraLogo)
+      asset: await new Asset().fromURL(kaguraLogo)
     })
-    this.kagura.x = 800
+    this.kagura.x = 500
+    this.kagura.y = 30
+    this.kagura.children[0]!.width = 130
+    this.kagura.children[0]!.height = 150
     this.addChild(this.kagura)
   }
   frame () {

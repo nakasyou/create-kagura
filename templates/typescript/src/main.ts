@@ -6,5 +6,5 @@ const app = new Kagura({
   startScene: MainScene,
 })
 
-kagura.setCanvasSize(1000,200)
+app.setCanvasSize(1000,200)
 await app.start()
