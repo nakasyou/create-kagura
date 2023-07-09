@@ -43,7 +43,17 @@ async function main () {
   )
   const files = fs.readdirSync(templateDir)
   for (const file of files) {
-    console.log(file)
+    if (file === "_gitignore") {
+      await fs.copy(path.resolve(templateDir, '.gitignore'), path.resolve(targetDir, file))
+      continue
+    }
+    if (file === 'package.json') {
+      const packageJson = await fs.readJson(path.resolve(templateDir, 'package.json'))
+      packageJson.name = targetDir
+      await fs.writeJson(path.resolve(targetDir, file), packageJson)
+      continue
+    }
+    await fs.copy(path.resolve(templateDir, file), path.resolve(targetDir, file))
   }
   
   console.log('Inited KaguraJS!')
