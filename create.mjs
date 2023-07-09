@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import prompts from 'prompts'
-import fs from 'node:fs'
+import fs from 'fs-extra'
 
 async function main () {
   console.log(chalk.blue('Create Kagura'))
@@ -27,13 +27,18 @@ async function main () {
     },
   ]
   const result = await prompts(questions)
-  console.log(result)
+  
+  if (result.overwrite) {
+    // Empty dir
+    await fs.remove(targetDir)
+    
+  }
 
   const pkgManager = getPkgManager()
   
   console.log('Inited KaguraJS!')
   console.log('\nNext steps :')
-  console.log(`cd ${result.projectName}`)
+  console.log(`cd ${targetDir}`)
   console.log(`${pkgManager} i`)
   if (['yarn', 'pnpm'].includes(pkgManager)) {
     console.log(`${pkgManager} dev`)
@@ -42,6 +47,7 @@ async function main () {
   }
 }
 function cansel () {
+  console.log('\n')
   console.log(chalk.red('✖') + ' Operation cancelled')
   process.exit(1)
 }
