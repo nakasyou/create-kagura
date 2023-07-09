@@ -50,7 +50,9 @@ async function main () {
     if (file === 'package.json') {
       const packageJson = await fs.readJson(path.resolve(templateDir, 'package.json'))
       packageJson.name = targetDir
-      await fs.writeJson(path.resolve(targetDir, file), packageJson)
+      await fs.writeJson(path.resolve(targetDir, file), packageJson, {
+        spaces: 2,
+      })
       continue
     }
     await fs.copy(path.resolve(templateDir, file), path.resolve(targetDir, file))
