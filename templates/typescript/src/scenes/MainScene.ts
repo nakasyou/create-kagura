@@ -6,7 +6,7 @@ import {
 } from "kagurajs"
 import GoboImage from "../../assets/gobo.svg"
 
-export class MainScene extends Scene {
+export default class MainScene extends Scene {
   gobo: Sprite
   constructor (options: SceneConstructorOptions) {
     super(options)
