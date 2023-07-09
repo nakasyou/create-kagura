@@ -4,21 +4,32 @@ import {
   Sprite,
   Asset,
 } from "kagurajs"
-import GoboImage from "../../assets/gobo.svg"
+import ViteLogo from "../../assets/vite.svg"
+import KaguraLogo from "../../assets/kagura.svg"
 
 export default class MainScene extends Scene {
-  gobo: Sprite
+  vite: Sprite
+  kagura: Sprite
   constructor (options: SceneConstructorOptions) {
     super(options)
-    this.gobo = {} as Sprite
+    this.vite = {} as Sprite
+    this.kagura = {} as Sprite
   }
   async init () {
-    this.gobo = await new Sprite().init({
-      asset: new Asset().fromURL(GoboImage)
+    this.vite = await new Sprite().init({
+      asset: new Asset().fromURL(ViteLogo)
     })
-    this.addChild(this.gobo)
+    this.vite.x = 0
+    this.addChild(this.vite)
+    
+    this.kagura = await new Sprite().init({
+      asset: new Asset().fromURL(KaguraLogo)
+    })
+    this.kagura.x = 800
+    this.addChild(this.kagura)
   }
   frame () {
-    this.gobo.x += Math.random() - 0.5
+    this.vite.x += 0.1
+    this.kagura.x -= 0.1
   }
 }
