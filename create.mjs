@@ -1,6 +1,8 @@
 import chalk from 'chalk'
 import prompts from 'prompts'
 import fs from 'fs-extra'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
 async function main () {
   console.log(chalk.blue('Create Kagura'))
@@ -31,10 +33,18 @@ async function main () {
   if (result.overwrite) {
     // Empty dir
     await fs.remove(targetDir)
-    
   }
-
+  
   const pkgManager = getPkgManager()
+  const templateDir = path.resolve(
+    fileURLToPath(import.meta.url),
+    './templates',
+    'typescript'
+  )
+  const files = fs.readdirSync(templateDir)
+  for (const file of files) {
+    console.log(file)
+  }
   
   console.log('Inited KaguraJS!')
   console.log('\nNext steps :')
@@ -46,6 +56,8 @@ async function main () {
     console.log(`${pkgManager} run dev`)
   }
 }
+
+// Utils
 function cansel () {
   console.log('\n')
   console.log(chalk.red('✖') + ' Operation cancelled')
