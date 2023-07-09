@@ -1,3 +1,3 @@
-console.log("Nothing here :(")
+import chalk from 'chalk'
 
-console.log("Developing now...")
+console.log(chalk.blue("Create Kagura"))

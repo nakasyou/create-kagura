@@ -18,5 +18,11 @@
     "create-kagura": "./create.mjs"
   },
   "scripts": {},
-  "files": ["create.js"]
+  "files": [
+    "create.mjs"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "prompts": "^2.4.2"
+  }
 }
