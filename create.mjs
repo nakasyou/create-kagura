@@ -38,7 +38,7 @@ async function main () {
   const pkgManager = getPkgManager()
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
-    './templates',
+    '../templates',
     'typescript'
   )
   const files = fs.readdirSync(templateDir)
