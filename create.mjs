@@ -44,7 +44,7 @@ async function main () {
   const files = fs.readdirSync(templateDir)
   for (const file of files) {
     if (file === "_gitignore") {
-      await fs.copy(path.resolve(templateDir, '.gitignore'), path.resolve(targetDir, file))
+      await fs.copy(path.resolve(templateDir, '_gitignore'), path.resolve(targetDir, '.gitignore'))
       continue
     }
     if (file === 'package.json') {
